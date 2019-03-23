@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}credit management{% endblock %}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}" type="text/javascript">
+
+<style>
+
+    body {
+             background-color:#222930;
+
+        }
+</style>
+</head>
+<body>
+    <div class="text-white">
+        <div style="background:transparent !important" class="jumbotron jumbotron-fluid container ">
+
+            {% block content %}
+            <h1 class="display-3 text-center mb-5"><strong>CREDIT MANAGEMENT APP</strong></h1>
+            <h2 class="display-5 text-center mb-5"><em>Manage credits by sending credits from one users to other </em></h2>
+
+            <div class="row justify-content-center">
+            <a class="btn btn-primary btn-lg" href="{% url 'credits:allusers' %}" role="button">View Users</a>
+            </div>
+
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

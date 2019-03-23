@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+{% block title %}Users{% endblock %}
+
+{% block content %}
+
+    <table class="table table-bordered table-hover">
+        <thread>
+        <tr>
+
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Transactions</th>
+        </tr>
+        </thread>
+
+        <tbody>
+    {% for data in persons_data %}
+
+        <tr>
+            <td><a class="text-white" href="{% url 'credits:userdetails' data.id %}"> {{ data.name }}</a></td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.credites }}</td>
+            <td>{{ data.transactions }}</td>
+        </tr>
+    {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}

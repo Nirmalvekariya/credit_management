@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+{% block title %}{{ users_data.name }}{% endblock %}
+
+{% block content %}
+
+   {% for message in messages %}
+
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+            {% endfor %}
+
+<h1 class="display-4 text-center mb-5 text-info"><strong><ins>Details of {{ users_data.name }}</ins></strong></h1>
+
+    <div class="container ml-5" >
+        <h1 >Name : {{ users_data.name }}</h1>
+        <h1 >Email : {{ users_data.email }}</h1>
+        <h1 >Credits : {{ users_data.credites }}</h1>
+    </div>
+
+
+            <h3 class="text-center text-info">Transfer Credits </h3>
+    <div class="container" style="margin-left:25%;">
+        <form method="post" action="{% url 'credits:transfer' users_data.id %}"> {% csrf_token %}
+            <div class="form-group row">
+                <label for="uname" class="col-sm-2 col-form-label">Username: </label>
+                <div style="width:25%;">
+                    <input id="uname" class="form-control" type="text" required name="name1" placeholder="Whom do you want to Transfer">
+                </div>
+            </div>
+              <div class="form-group row">
+                <label for="credit" class="col-sm-2 col-form-label">Credits: </label>
+                <div style="width:25%;">
+                    <input id="credit" type="text" class="form-control" required name="credit1" placeholder="How much do you want to Transfer">
+                </div>
+              </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div style="width:25%;">
+                        <button type="submit" class="btn btn-primary">Transfer</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+<script>
+    $('.alert').alert('close')
+</script>
+{% endblock %}

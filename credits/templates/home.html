@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}" type="text/javascript">
 
 <style>
-
+ 
     body {
+ 
              background-color:#222930;
 
         }
@@ -19,10 +20,12 @@
     <div class="text-white">
         <div style="background:transparent !important" class="jumbotron jumbotron-fluid container ">
 
+            <!-- h1 Heading -->
             {% block content %}
             <h1 class="display-3 text-center mb-5"><strong>CREDIT MANAGEMENT APP</strong></h1>
             <h2 class="display-5 text-center mb-5"><em>Manage credits by sending credits from one users to other </em></h2>
 
+            <!-- Button to view all the users -->
             <div class="row justify-content-center">
             <a class="btn btn-primary btn-lg" href="{% url 'credits:allusers' %}" role="button">View Users</a>
             </div>

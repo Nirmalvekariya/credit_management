@@ -1,2 +1,2 @@
 # credit_management
-This app let's you transfer credit from one user to another.
+This django based app allows you to transfer credit from one user to another.
